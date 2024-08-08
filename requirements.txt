@@ -1,4 +1,5 @@
-fal-client
+fal
 fastapi
 uvicorn
-fal
+fal-client
+python-dotenv
