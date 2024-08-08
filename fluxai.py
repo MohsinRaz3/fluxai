@@ -1,10 +1,10 @@
 import fal_client
 
-async def submit(prompt: str):
+async def submit(user_prompt: str):
     handler = await fal_client.submit_async(
         "fal-ai/flux/schnell",
         arguments={
-            "prompt": f"{prompt}"
+            "prompt": f"{user_prompt}"
         },
     )
 

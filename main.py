@@ -1,5 +1,4 @@
 import os
-import asyncio
 from fluxai import submit
 from dotenv import load_dotenv
 from fastapi import FastAPI
@@ -12,9 +11,10 @@ app = FastAPI(title="FLux.ai", docs_url="/docs")
 @app.get("/")
 def fluxai():
     return {"message" : "welcome to fluxai"}
-@app.post("/prompt")
-async def image_prompt(prompt:str):
-     img_url =  await submit(prompt)
+
+@app.post("/prompt/{user_prompt}")
+async def image_prompt(user_prompt:str):
+     img_url =  await submit(user_prompt)
      return {"image_url":img_url}
  
  
